@@ -95,3 +95,14 @@ const harryPotterCast = [
 
 
 nameCharacters(harryPotterCast);
+
+
+// import TS dependencies
+import {Character} from './class';
+
+
+const HarryPotter = new Character({firstName: 'Harry', lastName: 'Potter', occupation: 'Wizard', age: 37});
+
+HarryPotter.say();
+
+HarryPotter.sayPrivate();

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // implicit type declaration
 var question = 'What is the meaning of life?';
 console.log(question);
@@ -57,3 +58,8 @@ var harryPotterCast = [
     },
 ];
 nameCharacters(harryPotterCast);
+// import TS dependencies
+var class_1 = require("./class");
+var HarryPotter = new class_1.Character({ firstName: 'Harry', lastName: 'Potter', occupation: 'Wizard', age: 37 });
+HarryPotter.say();
+HarryPotter.sayPrivate();
