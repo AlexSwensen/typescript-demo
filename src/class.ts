@@ -26,7 +26,7 @@ export class Character implements ICharacterClass {
   }
 
   say() {
-    console.log("You're a Wizard Harry!");
+    console.log(`You're a Wizard ${this.firstName}!`);
   }
 
   private sayPrivate() {
