@@ -11,12 +11,26 @@ question = 3.14; // question is a string, not a number.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 // explicit type declaration
-let answer:number = 42; // looks like python. 😂
+let answer:number = 42; // define a type when a variable is declared
 
 console.log(`the answer is ${answer}`);
 
-answer = 3.14; // valid type
+answer = 3.14; // valid.
+
+
+
 
 
 
@@ -38,6 +52,13 @@ askQuestion(question);
 
 
 
+
+
+
+
+
+
+
 // expect object with a given structure.
 
 const person = {
@@ -53,9 +74,13 @@ function namePerson(person: {name: string, age: number}) {
 namePerson(person); // Bilbo Baggins is 50 years old.
 
 
-// declaring interfaces of custom types
 
-interface INamedPerson {
+
+
+
+// declaring interfaces
+
+interface INamedPerson { // Interfaces help us define the shape of our data.
   name: string,
   age?: number, // optional param that may not always be here
   occupation: string
@@ -66,7 +91,7 @@ interface INamedPerson {
 function nameCharacter (person: INamedPerson) {
   if(person.occupation) {
     console.log(`${person.name} is a ${person.occupation}`)
-  } else if (person && !person.occupation) {
+  } else if (person && !person.occupation && person.age) {
     console.log(`${person.name} is ${person.age} years old.`)
   }
 }
@@ -74,7 +99,7 @@ function nameCharacter (person: INamedPerson) {
 
 // some types require additional arguments.
 // In this case we will define an Array that has all of its arguments as `INamedPerson`
-function nameCharacters(people: Array<INamedPerson>) {
+function nameCharacters(people: Array<INamedPerson>) { // this can also be written as `INamedPerson[]`
   people.forEach(person => {
     nameCharacter(person);
   })
@@ -97,12 +122,23 @@ const harryPotterCast = [
 nameCharacters(harryPotterCast);
 
 
+
+
+
+
 // import TS dependencies
 import {Character} from './class';
 
+const harry = {
+  firstName: 'Harry',
+  lastName: 'Potter',
+  occupation: 'Wizard',
+  age: 37
+};
 
-const HarryPotter = new Character({firstName: 'Harry', lastName: 'Potter', occupation: 'Wizard', age: 37});
+// using dependencies
+const HarryPotter = new Character(harry);
 
 HarryPotter.say();
 
-HarryPotter.sayPrivate();
+//HarryPotter._sayPrivate();

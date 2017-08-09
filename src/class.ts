@@ -1,12 +1,14 @@
 
-interface ICharacterConstructor {
+interface ICharacterConstructor { // shape of input for constructor.
   firstName: string,
   lastName: string,
   age: number,
   occupation: string,
 }
 
-interface ICharacterClass {
+
+
+interface ICharacterClass { // Still figuring this bit out...
 
 }
 
@@ -29,7 +31,7 @@ export class Character implements ICharacterClass {
     console.log(`You're a Wizard ${this.firstName}!`);
   }
 
-  private sayPrivate() {
+  private _sayPrivate() {
     console.log("But i cannot directly say this...")
   }
 
