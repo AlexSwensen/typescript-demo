@@ -50,7 +50,7 @@ function namePerson(person: {name: string, age: number}) {
   console.log(`${person.name} is ${person.age} years old.`);
 }
 
-namePerson(person);
+namePerson(person); // Bilbo Baggins is 50 years old.
 
 
 // declaring interfaces of custom types
